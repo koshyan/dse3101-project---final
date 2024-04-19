@@ -22,12 +22,14 @@ ui <- fluidPage(
     column(width = 12,
            div(class = "how-to-use",
                h3("How to Use"),
-               p("1. Select a neighborhood from each dropdown menu."),
+               p("1. Select a neighbourhood from each dropdown menu."),
+               p("The selected neighbourhood can be viewed as your origin location (i.e. where your home will be located) and explore whether the nearby neighbourhoods suit your daily life and commute."),
+               p("Alternatively, it can also be viewed as your destination location (i.e. where you want your home to be close to) and explore which nearby neighbourhoods are suitable for your new home."),
                p("2. Choose a mode of transport for each neighborhood."),
-               p("3. Using the slider, pick your desired travel time."),
-               p("4. The maps will display the accessibility scores for the selected neighborhoods."),
-               p("5. Click on the circles to look at the accessibility scores (you may zoom in on the map for a clearer view of the individual circles)."),
-               p("Note: The legends on the maps explain the color code used for accessibility scores. An accessibility score of close to 1 is the best, while 5 reflects the worst accessibility.")
+               p("3. If you have selected 'MRT & LRT', pick your desired travel time using the slider."),
+               p("4. The maps will display the accessibility scores for the selected neighbourhoods."),
+               p("5. Click on the circles on the map to view a particular MRT station / bus stop's accessibility score (you may zoom in on the map for a clearer view of the individual circles)."),
+               p("Note: The legends on the maps explain the color code used for accessibility scores. An accessibility score of close to 1 is the best, while 5 reflects the worst accessibility."),
            ),
            hr()
     )

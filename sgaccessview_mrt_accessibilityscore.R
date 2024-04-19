@@ -63,8 +63,7 @@ mrt_accessibility <- function(ttm, beta, tt = "travel_time") {
   return(access_dt)
 }
 
-set1<- mrt_accessibility(tb_data, 60)
-set2<-mrt_accessibility(rh_data, 60)
+
 ##----------------------------------------------------------------
 ##                         Redhill                              --
 ##----------------------------------------------------------------
@@ -77,7 +76,8 @@ rh_data <- redhill %>%
   mutate(travel_time = Time) %>%
   arrange(travel_time)
 
-
+set1<- mrt_accessibility(tb_data, 60)
+set2<-mrt_accessibility(rh_data, 60)
 
 
 ##----------------------------------------------------------------
