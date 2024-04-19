@@ -34,6 +34,7 @@ ui <- fluidPage(
     )
   ),
   
+  # Select neighbourhood
   fluidRow(
     column(width = 6,
            selectInput("neighbourhood1", "Select a neighbourhood:",
@@ -45,6 +46,7 @@ ui <- fluidPage(
                          "Kovan", "Hougang", "Sengkang", "Punggol", "Choa Chu Kang", "Toa Payoh")))
   ),
   
+  # Select mode of transport
   fluidRow(
     column(width = 6,
            selectInput("transport1", "Select a mode of transport for the above neighbourhood:", c("MRT & LRT", "Bus"))),
@@ -52,6 +54,7 @@ ui <- fluidPage(
            selectInput("transport2", "Select a mode of transport for the above neighbourhood:", c("MRT & LRT", "Bus")))
   ),
   
+  # Select maximum travel time (for MRT)
   fluidRow(
     column(width = 6,
       conditionalPanel(
@@ -71,11 +74,13 @@ ui <- fluidPage(
   
   div(class = "section"),
   
+  # Map output
   fluidRow(
     column(width = 6, textOutput("maptitle1")),
     column(width = 6, textOutput("maptitle2"))
   ),
-      
+  
+  # Table output
   fluidRow(
     column(width = 6, leafletOutput("map1")),
     column(width = 6, leafletOutput("map2"))
