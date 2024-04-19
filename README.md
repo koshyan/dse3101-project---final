@@ -24,4 +24,5 @@ The following steps have to be completed in order to launch our Shiny applicatio
 1. Ensure that all files in the table above (README.md is optional) are saved in the same working directory or folder.
 2. In your RStudio console, set your LTA DataMall API key as an environment variable using Sys.setenv(ltakey = “...”), where “...” represents your personal LTA DataMall API key.
 Alternatively, you may set your API key under a different variable name, and update the Sys.getenv(“ltakey”) code in data.R to retrieve your API key accordingly.
+
 To run the Shiny application, only sgaccessview_visualisation.R has to be open. Click on “Run App” at the top right corner and the application should be launched successfully.
