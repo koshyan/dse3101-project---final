@@ -6,7 +6,6 @@ library(leaflet)
 
 # Load accessibility functions -------------------------------------------------
 source("sgaccessview_mrt_accessibilityscore.R")
-Sys.setenv(ltakey = "2gBSYNeFTxSuRNfpYYDmzQ==")
 source("sgaccessview_bus_accessibilityscore.R")
 
 
@@ -176,8 +175,8 @@ server <- function(input, output, session) {
                        radius = 6, fillOpacity = 1, stroke = FALSE) %>%
       addLegend("bottomright", # Position the legend
                 colors = c("green", "orange", "red"), # Colors used in the map
-                labels = c("Nearest in your neighbourhood",
-                           "Requires time to travel to transport of choice",
+                labels = c("Nearest to your neighbourhood",
+                           "Requires some time to travel these areas",
                            "Furthest from your neighbourhood"), # Legend labels
                 title = "Accessibility Levels")
   })
