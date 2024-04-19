@@ -5,9 +5,9 @@ library(leaflet)
 
 
 # Load accessibility functions -------------------------------------------------
-source("FINAL_mrt_accessibilityscore.R")
+source("sgaccessview_mrt_accessibilityscore.R")
 Sys.setenv(ltakey = "2gBSYNeFTxSuRNfpYYDmzQ==")
-source("bus_accessibility_score.R")
+source("sgaccessview_bus_accessibilityscore.R")
 
 
 # VISUALISATION
@@ -52,9 +52,19 @@ ui <- fluidPage(
   ),
   
   fluidRow(
-    column(width = 12,
-           sliderInput("Time", "Select your maximum Desired Travel Time (in minutes):", 
-                       min = 0, max = 60, value = 30)
+    column(width = 6,
+      conditionalPanel(
+        condition = "input.transport1 == 'MRT & LRT'",
+        sliderInput("Time1", "Select your maximum Desired Travel Time via MRT (in minutes):", 
+                    min = 0, max = 90, value = 30)
+      )
+    ),
+    column(width = 6,
+      conditionalPanel(
+        condition = "input.transport2 == 'MRT & LRT'",
+        sliderInput("Time2", "Select your maximum Desired Travel Time via MRT (in minutes):", 
+                    min = 0, max = 90, value = 30)
+      )
     )
   ),
   
@@ -97,7 +107,7 @@ server <- function(input, output, session) {
   })
   # Retrieving accessibility scores for the first neighbourhood
   score1 <- reactive({
-    beta_value <- input$Time
+    beta_value <- input$Time1
     
     if (input$transport1 == "MRT & LRT") {
       if (input$neighbourhood1 == "Tiong Bahru") {
@@ -182,7 +192,7 @@ server <- function(input, output, session) {
   })
   # Retrieving accessibility scores for the second neighbourhood
   score2 <- reactive({
-    beta_value <- input$Time
+    beta_value <- input$Time2
     
     if (input$transport2 == "MRT & LRT") {
       if (input$neighbourhood2 == "Tiong Bahru") {
@@ -249,8 +259,8 @@ server <- function(input, output, session) {
                        radius = 6, fillOpacity = 1, stroke = FALSE) %>%
       addLegend("bottomright", # Position the legend
                 colors = c("green", "orange", "red"), # Colors used in the map
-                labels = c("Nearest in your neighbourhood",
-                           "Requires time to travel to transport of choice",
+                labels = c("Nearest to your neighbourhood",
+                           "Requires some time to travel to these areas",
                            "Furthest from your neighbourhood"), # Legend labels
                 title = "Accessibility Levels")
   })
