@@ -91,6 +91,7 @@ ui <- fluidPage(
     column(width = 6, DT::DTOutput("table2"))
   ),
   
+  # Output title
   tags$head(tags$style("#maptitle1{color: black;
                                  font-size: 20px;
                                  font-style: bold;
