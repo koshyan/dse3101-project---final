@@ -10,8 +10,8 @@ By leveraging insights from both quantitative data and qualitative analysis, we 
 
 #### The descriptions of the files found in this repository is detailed below: 
 1. README.md (Markdown file): Details on DSE3101 Project (SGAccessView) GitHub repository
-2. MRT Stations.csv (Dataset): Referenced in sgaccessview_bus_accessibilityscore.R, dataset containing the following variables:
-3. mrtfaretime.csv (Dataset): Referenced in sgaccessview_mrt_accessibilityscore.R, dataset containing the following variables:
+2. MRT Stations.csv (Dataset): Referenced in sgaccessview_bus_accessibilityscore.R
+3. mrtfaretime.csv (Dataset): Referenced in sgaccessview_mrt_accessibilityscore.R
 4. data.R (R code): Referenced in sgaccessview_bus_accessibilityscore.R, web scraping & API code to obtain relevant datasets from LTA DataMall
 5. sgaccessview_mrt_accessibilityscore.R (R code): Referenced in sgaccessview_visualisation.R, MRT accessibility functions
 6. sgaccessview_bus_accessibilityscore.R (R code): Referenced in sgaccessview_visualisation.R, bus accessibility functions
